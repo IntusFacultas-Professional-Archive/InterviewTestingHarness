@@ -20,9 +20,7 @@ const formatTest = (testName, actualValue, expectedValue) => {
   Object.entries(testCases).forEach(([testName, test]) => {
       try {
           const result = test.actions();
-          if(result !== test.expectedValue) {
-              testResults.push(formatTest(testName, result, test.expectedValue));
-          }
+          testResults.push(formatTest(testName, result, test.expectedValue));
       } catch (e) {
           testResults.push(formatTest(testName, e, test.expectedValue))
       }
