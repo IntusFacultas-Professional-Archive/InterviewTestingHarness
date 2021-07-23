@@ -22,7 +22,7 @@ const formatTest = (testName, actualValue, expectedValue) => {
           const result = test.actions();
           testResults.push(formatTest(testName, result, test.expectedValue));
       } catch (e) {
-          testResults.push(formatTest(testName, e, test.expectedValue))
+          testResults.push(formatTest(testName, e.stack, test.expectedValue))
       }
   })
   if(testResults.length) {
